@@ -8,8 +8,16 @@ def create_group(db: Session, group: schemas.GroupCreate):
     db.refresh(new_group)
     return new_group
 
+    
 def get_groups(db: Session):
-    return db.query(models.Group).all()
+    try:
+        groups = db.query(models.Group).all()
+        print("Fetched groups:", groups)
+        return groups
+    except Exception as e:
+        print("Error fetching groups:", e)
+        raise
+
 
 def create_quiz(db: Session, quiz: schemas.QuizCreate):
     db_quiz = models.Quiz(
