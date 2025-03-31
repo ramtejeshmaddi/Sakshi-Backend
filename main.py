@@ -8,19 +8,21 @@ from routes import quiz_routes
 #-------------------------------------
 from fastapi.middleware.cors import CORSMiddleware
 
+
 app = FastAPI()
 
 @app.get("/health")
 def health_check():
     return {"status": "OK"}
 
-app = FastAPI()
 Base.metadata.create_all(bind=engine)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # or use ["*"] during dev
+    allow_origins=["*"],  # Open for dev, restrict later
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 app.include_router(quiz_routes.router)
