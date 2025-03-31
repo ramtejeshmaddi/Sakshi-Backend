@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app import models, schemas
+import models, schemas
 
 def create_group(db: Session, group: schemas.GroupCreate):
     new_group = models.Group(name=group.name, created_by=group.created_by)
