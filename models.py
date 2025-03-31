@@ -1,7 +1,9 @@
 from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from app.database import Base
+#------------------------------------
+from database import Base
+#from app.database import Base -> Use this when running locally
 
 class Group(Base):
     __tablename__ = "groups"
