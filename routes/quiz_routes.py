@@ -1,7 +1,7 @@
 
 from sqlalchemy.orm import Session
 #------------------------------------
-from import crud, schemas
+import crud, schemas
 #from app import crud, schemas -> Use this when running locally
 #------------------------------------
 from database import Base, engine
@@ -10,7 +10,7 @@ from database import Base, engine
 from schemas import GroupMembershipCreate
 #from app.schemas import GroupMembershipCreate -> Use this when running locally
 #------------------------------------
-from import models
+import models
 #from app import models -> Use this when running locally
 #------------------------------------
 from database import get_db
