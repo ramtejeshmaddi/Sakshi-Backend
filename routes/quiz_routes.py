@@ -1,6 +1,8 @@
 
 from sqlalchemy.orm import Session
-from app import crud, schemas
+#------------------------------------
+from import crud, schemas
+#from app import crud, schemas -> Use this when running locally
 #------------------------------------
 from database import Base, engine
 #from app.database import Base, engine -> Use this when running locally
@@ -8,7 +10,8 @@ from database import Base, engine
 from schemas import GroupMembershipCreate
 #from app.schemas import GroupMembershipCreate -> Use this when running locally
 #------------------------------------
-from app import models
+from import models
+#from app import models -> Use this when running locally
 #------------------------------------
 from database import get_db
 #from app.database import get_db -> Use this when running locally
