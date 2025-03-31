@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from database import Base, engine
 #from app.database import Base, engine -> Use this when running locally
 #-------------------------------------
-from app.routes import quiz_routes 
+from routes import quiz_routes 
 #from app.routes import quiz_routes -> Use this when running locally
 #-------------------------------------
 from fastapi.middleware.cors import CORSMiddleware
