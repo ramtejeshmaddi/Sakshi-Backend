@@ -7,7 +7,7 @@ from routes import quiz_routes
 #from app.routes import quiz_routes -> Use this when running locally
 #-------------------------------------
 from fastapi.middleware.cors import CORSMiddleware
-
+import os
 
 app = FastAPI()
 
@@ -24,5 +24,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/debug/db-check")
+def check_db():
+    return {"exists": os.path.exists("quiz.db")}
+
 
 app.include_router(quiz_routes.router)
