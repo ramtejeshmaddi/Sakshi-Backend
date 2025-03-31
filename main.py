@@ -8,6 +8,11 @@ from routes import quiz_routes
 #-------------------------------------
 from fastapi.middleware.cors import CORSMiddleware
 
+app = FastAPI()
+
+@app.get("/health")
+def health_check():
+    return {"status": "OK"}
 
 app = FastAPI()
 Base.metadata.create_all(bind=engine)
