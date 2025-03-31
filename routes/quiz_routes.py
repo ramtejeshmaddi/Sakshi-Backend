@@ -1,10 +1,18 @@
 
 from sqlalchemy.orm import Session
 from app import crud, schemas
-from app.database import SessionLocal
-from app.schemas import GroupMembershipCreate
+#------------------------------------
+from database import Base, engine
+#from app.database import Base, engine -> Use this when running locally
+#------------------------------------
+from schemas import GroupMembershipCreate
+#from app.schemas import GroupMembershipCreate -> Use this when running locally
+#------------------------------------
 from app import models
-from app.database import get_db
+#------------------------------------
+from database import get_db
+#from app.database import get_db -> Use this when running locally
+#------------------------------------
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import joinedload
 
