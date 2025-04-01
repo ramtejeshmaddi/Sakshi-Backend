@@ -44,14 +44,16 @@ class QuizOut(BaseModel):
     questions: List[QuestionOut]
 
     class Config:
-        orm_mode = True
+         from_attributes = True
 
 class GroupOut(BaseModel):
     id: int
     name: str
     created_by: str
+
     class Config:
-        orm_mode = True
+        from_attributes = True  # ✅ Correct for Pydantic v2
+
 class SubmittedAnswerCreate(BaseModel):
     question_id: int
     selected_answer_id: int
@@ -68,7 +70,7 @@ class SubmissionOut(BaseModel):
     score: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class GroupMembershipCreate(BaseModel):
