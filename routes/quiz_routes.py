@@ -18,6 +18,7 @@ from database import get_db
 #------------------------------------
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import joinedload
+from database import SessionLocal
 
 
 
